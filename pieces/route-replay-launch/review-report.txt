@@ -1,0 +1,57 @@
+shot 1 (Your workout.): 12 frames [0,8,15,23,30,38,45,53,60,68,75,83] -> review/shot01-sheet.jpg
+shot 2 (Replayed. Route Replay.): 12 frames [90,98,105,113,120,128,135,143,150,158,165,173] -> review/shot02-sheet.jpg
+shot 3 (Pick a workout.): 8 frames [180,188,195,203,210,218,225,233] -> review/shot03-sheet.jpg
+shot 4 (See the effort.): 12 frames [240,248,255,263,270,278,285,293,300,308,315,323] -> review/shot04-sheet.jpg
+shot 5 (See the details.): 8 frames [330,338,345,353,360,368,375,383] -> review/shot05-sheet.jpg
+shot 6 (Then press play.): 16 frames [390,398,405,413,420,428,435,443,450,458,465,473,480,488,495,503] -> review/shot06-sheet.jpg
+shot 7 (Replay it in 3D.): 12 frames [510,518,525,533,540,548,555,563,570,578,585,593] -> review/shot07-sheet.jpg
+shot 8 (Same route. New perspective.): 12 frames [600,608,615,623,630,638,645,653,660,668,675,683] -> review/shot08-sheet.jpg
+shot 9 (Relive your route.): 12 frames [690,698,705,713,720,728,735,743,750,758,765,773] -> review/shot09-sheet.jpg
+shot 10 (Route Replay. Explore on GitHub.): 16 frames [780,788,795,803,810,818,825,833,840,848,855,863,870,878,885,893] -> review/shot10-sheet.jpg
+
+CUTS vs beat grid @ 120 BPM, 30fps (8ths = 0.25s)
+ #   cut t     grid  grid#   nominal f  cut f   cut f t     err(f)  Δ@cut  peak(±2f)          shot change           result
+ 1    6.000s   8th    24      180.0    180   6.0000s  +0.0    12.4  f180 ok            shot 2 -> 3           PASS
+ 2    8.000s   8th    32      240.0    240   8.0000s  +0.0    10.9  f240 ok            shot 3 -> 4           PASS
+ 3   11.000s   8th    44      330.0    330   11.0000s  +0.0    12.2  f330 ok            shot 4 -> 5           PASS
+ 4   13.000s   8th    52      390.0    390   13.0000s  +0.0    20.2  f390 ok            shot 5 -> 6           PASS
+ 5   17.000s   8th    68      510.0    510   17.0000s  +0.0    30.7  f510 ok            shot 6 -> 7           PASS
+ 6   20.000s   8th    80      600.0    600   20.0000s  +0.0    77.4  f600 ok            shot 7 -> 8           PASS
+ 7   23.000s   8th    92      690.0    690   23.0000s  +0.0    67.9  f690 ok            shot 8 -> 9           PASS
+ 8   26.000s   8th   104      780.0    780   26.0000s  +0.0     6.8  f780 ok            shot 9 -> 10          PASS
+all cuts on grid within 1 frame: PASS
+MORPHS: 1 shape-morph bridges at 3s, all centred on the 8th grid: PASS
+
+PACING: 8 hard cuts (1 in the last 5s), mean segment 3.33s, shortest 2.00s, plus 0 on-2s montage steps
+FLAT FRAMES (contrast < 6/255): none
+LOOP: diff(last=899, first=0) = 7.16; typical consecutive diff in the first 40 frames = 0.30 (info: F4/F6 loop pixel-exactly and F4 checks it; other formats return to the opening image, changed)
+
+STORY ARC (loudness in dBFS over 100ms windows: median / 90th percentile; music = music stem median)
+ act          role       t0-t1         cuts  cuts/s  motion   mix med  mix p90  music
+ Hook         build      0.00-6.00s      0    0.00     0.2    -20.7    -16.9   -20.7
+ Explore      journey    6.00-13.00s      3    0.43     0.2    -20.9    -15.1   -20.9
+ Press play   peak       13.00-16.00s      1    0.33     0.2    -18.3    -13.3   -18.3
+ Anticipation silence    16.00-17.00s      0    0.00     0.0   -120.0   -120.0  -120.0
+ 3D replay    gift       17.00-20.00s      1    0.33     0.0     -9.5     -8.2    -9.5
+ Relive / GitHub goodbye    20.00-30.00s      3    0.30     0.4    -24.0    -19.5   -24.0
+  info  no cut-rate rule (no hard cuts, or eras joined by morphs): peak motion 0.2 vs max other 0.4 (pixel motion includes noise/boil, so it is not a rule here)
+  PASS  gift is the loudest act (p90 -8.2 vs next -13.3)
+  PASS  gift p90 >= peak p90 + 1 dB (-8.2 vs -13.3): the busiest moment is not the loudest
+  PASS  silence median <= peak median - 15 dB (-120.0 vs -18.3)
+  PASS  gift is held: <= 0.5 cuts/s (0.33)
+  PASS  goodbye decays: median <= gift median - 6 dB (-24.0 vs -9.5)
+story arc: PASS (5/5 rules)
+
+TEXT (every string drawn, traced to screen; 160 frames sampled, morph windows skipped)
+text: PASS (0 cut-off/overlap, 0 in the safe zone)
+
+SOUND (mix: renders/audio.wav)
+  loudest 100ms window: 17.0s (-7.5 dBFS) - in the payoff act 17-20s
+  silence before it: 1.4s at <= -40 dBFS ending 17.0s in the 2s before (craft.md wants 0.5-4s when the story has a turn)
+  loudness: -14.6 LUFS integrated, range 12.1 LU, true peak -1.1 dBFS (phone target about -16 to -14 LUFS, peak <= -1)
+
+DEAD BEATS (the picture's change over 0.5s, every 0.27s; median 0.10, "still" below 0.80; silence acts are exempt)
+dead beats: PASS (0 stretches over 3s)
+PHONE SHEET: review/phone.jpg (one frame a second at 360px wide — read every caption at this size)
+
+video: 1920x1080, 900 frames decoded

@@ -1,0 +1,47 @@
+# macOS and Xcode workspace state
+.DS_Store
+**/.DS_Store
+.freebuff/
+DerivedData/
+build/
+**/xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+*.moved-aside
+
+# Swift/Xcode generated output
+.build/
+*.xcresult
+*.log
+rotate_log.txt
+
+# Web motion starter build output
+web-motion/node_modules/
+web-motion/dist/
+web-motion/.vite/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.p8
+*.mobileprovision
+*.provisionprofile
+*.cer
+*.crt
+*.der
+
+# Personal workout exports and rendered media
+*.gpx
+*.fit
+*.tcx
+*.mov
+*.mp4
+*.m4v
+
+# Local animation references and derived comparison sheets
+references/

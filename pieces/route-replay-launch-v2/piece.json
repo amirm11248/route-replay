@@ -1,0 +1,13 @@
+{
+  "name": "route-replay-launch-v2",
+  "title": "Route Replay — varied portrait-footage revision",
+  "status": "complete-with-portrait-recording-placeholders",
+  "style": "clean-sketch",
+  "format": { "width": 1920, "height": 1080, "fps": 30, "bpm": 120, "duration": 30, "frames": 900 },
+  "formats": ["16:9"],
+  "storyFormat": "F8 — claims-to-proof trailer",
+  "build": ["src/head.html", "kit/core.js", "style", "src/motion.js", "src/drawing.js", "src/subjects.js", "src/scenes.js", "src/render.js", "src/board.js", "kit/score-head.js", "src/score.js", "src/score-tail.js", "src/player.js", "src/tail.html"],
+  "review": { "safe": { "top": 72, "bottom": 72, "right": 96 }, "refs": {} },
+  "recordings": { "manifest": "recording-slots.json", "state": "portrait-placeholders-only" },
+  "approvals": { "story": "Previously approved sequence and duration", "palette": "White, navy and cool slate", "revisedStoryboard": "2026-10-10 — Approve and render this revision" }
+}

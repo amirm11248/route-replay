@@ -1,0 +1,14 @@
+{
+  "name": "route-replay-launch",
+  "title": "Route Replay — GitHub launch trailer",
+  "status": "complete-with-recording-placeholders",
+  "supersededBy": "../route-replay-launch-v2",
+  "style": "clean-sketch",
+  "format": { "width": 1920, "height": 1080, "fps": 30, "bpm": 120, "duration": 30, "frames": 900 },
+  "formats": ["16:9"],
+  "storyFormat": "F8 — provisional claims-to-proof trailer",
+  "build": ["src/head.html", "kit/core.js", "style", "src/motion.js", "src/drawing.js", "src/scenes.js", "src/render.js", "src/board.js", "kit/score-head.js", "src/score.js", "src/score-tail.js", "src/player.js", "src/tail.html"],
+  "review": { "safe": { "top": 72, "bottom": 72, "right": 96 }, "refs": {} },
+  "recordings": { "manifest": "recording-slots.json", "state": "placeholders-only" },
+  "approvals": { "story": "2026-10-10", "look": "2026-10-10 — cleaner, white, navy and slate", "storyboard": "2026-10-10" }
+}

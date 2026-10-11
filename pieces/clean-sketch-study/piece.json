@@ -1,0 +1,35 @@
+{
+  "name": "clean-sketch-study",
+  "title": "Clean Sketch \u2014 premium sketchbook hybrid",
+  "status": "rendered-experiment",
+  "style": "clean-sketch",
+  "format": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "bpm": 120,
+    "duration": 8,
+    "frames": 240
+  },
+  "storyFormat": "abstract shape relay; four connected beats",
+  "build": [
+    "src/head.html",
+    "kit/core.js",
+    "style",
+    "src/motion.js",
+    "src/render.js",
+    "kit/board.js",
+    "kit/score-head.js",
+    "src/score.js",
+    "src/score-tail.js"
+  ],
+  "review": {
+    "safe": {
+      "top": 72,
+      "bottom": 72,
+      "right": 96
+    },
+    "refs": {}
+  },
+  "revision": 1
+}
