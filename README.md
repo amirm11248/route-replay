@@ -1,5 +1,11 @@
 # Route Replay
 
+Personal hobby project by [Malik Abdullah Amir](https://github.com/amirm11248),
+currently developed for learning and personal use without monetization.
+Original code and documentation are licensed under [MIT](LICENSE).
+See [project status](PROJECT_STATUS.md) for the current purpose and what to
+review if that purpose changes.
+
 Relive every outdoor workout from your Apple Watch — on the map, in 3D.
 
 Import your running, cycling, walking, hiking and other outdoor workouts from Apple Health. Browse them grouped by month, see every stat on a beautiful detail card (distance, pace, heart rate, elevation, weather, steps), then hit play to fly through your route in **3D satellite view**.
@@ -138,7 +144,12 @@ xcodebuild test -scheme RouteReplay -destination 'platform=iOS Simulator,name=iP
 
 ## Screenshots and demo media
 
-The repository intentionally contains no screenshots, video files, map tiles, or real workout files. Run the UI tests with `-resultBundlePath` to generate local screenshot attachments for review. The app does not export or save replay videos.
+The `pieces/` and `styles/` folders contain design studies, generated images,
+preview frames, and synthesized audio. The `web-motion/` workspace contains
+web artwork and prototype assets. No real HealthKit workout exports or bundled
+Apple map tiles or imagery are included. The app does not export or save replay
+videos. Run the UI tests with `-resultBundlePath` to generate local screenshot
+attachments for review.
 
 ## Privacy
 
@@ -146,20 +157,19 @@ HealthKit data is processed on-device and Route Replay has no app-owned server, 
 
 ## License
 
-This project is intended to be released under the [MIT License](https://opensource.org/license/mit/).
-The repository is not licensed under MIT until a top-level `LICENSE` file is
-added with the correct copyright holder and the owner has confirmed the rights
-to all original source code and assets.
+Copyright (c) 2026 Malik Abdullah Amir. Original Route Replay code,
+documentation, and original assets are licensed under the standard
+[MIT License](LICENSE), including its warranty disclaimer.
 
-The MIT License applies only to original Route Replay work that the copyright
-holder is entitled to license. It does not grant rights to Apple's SDKs,
-Apple Maps content, HealthKit data, or other third-party materials, which
-remain subject to their own terms.
+MIT permits commercial reuse. The maintainer's current noncommercial purpose
+does not restrict what other people may do under that license. See
+[PROJECT_STATUS.md](PROJECT_STATUS.md).
 
-MIT is a permissive license and does not impose a noncommercial-only
-restriction. That is compatible with this project being free and noncommercial
-today, but it means other people may commercially use and redistribute their
-own copies under the license terms.
+Third-party materials retain their own licenses. In particular, the New York
+route coordinates use ODbL, the copied React Bits component uses MIT + Commons
+Clause, and the web workspace's dependencies and fonts have their own terms.
+Apple's SDKs, Apple Maps content, and HealthKit data are also outside this MIT
+grant. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## Acknowledgements
 

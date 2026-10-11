@@ -2,6 +2,11 @@
 
 This is a separate React + Vite playground for web prototypes. It keeps browser-only motion dependencies out of the SwiftUI app.
 
+Original project code uses the root [MIT License](../LICENSE). The copied
+React Bits component and installed dependencies retain their own licenses;
+see [third-party notices](../THIRD_PARTY_NOTICES.md). The maintainer's current
+purpose is personal and noncommercial; see [project status](../PROJECT_STATUS.md).
+
 ## Start it
 
 ```sh

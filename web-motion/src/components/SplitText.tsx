@@ -1,5 +1,9 @@
 'use client';
 
+// React Bits, Copyright (c) 2026 David Haz.
+// MIT + Commons Clause; see ../../../third-party-licenses/ReactBits-LICENSE.md.
+// This third-party component is excluded from the repository's root MIT grant.
+
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';

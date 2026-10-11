@@ -3,6 +3,11 @@
 **Status:** repository draft  
 **Last reviewed:** 2026-08-17
 
+**Maintainer:** [Malik Abdullah Amir](https://github.com/amirm11248). The
+repository's current personal hobby purpose is described in
+[PROJECT_STATUS.md](PROJECT_STATUS.md). This purpose does not replace the
+disclosures needed for a distributed app.
+
 This notice describes the behavior of the source in this repository. If Route
 Replay is distributed through the App Store, publish the final notice at a
 stable public URL and review it against the actual release build and the
@@ -57,10 +62,12 @@ settings prevents future reads.
 
 ## Demo data
 
-Example workouts are hard-coded local test fixtures with fabricated metrics and
-routes. One route uses public Berlin landmarks to make the map replay legible;
-it is not imported from a user's workout history. No real workout export,
-HealthKit dump, GPX/FIT/TCX file, or rendered map video is included here.
+Example workouts are hard-coded local fixtures with fabricated workout metrics.
+The Berlin route uses public landmarks. The New York example follows a public
+running track using OpenStreetMap coordinates under the licenses in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Neither is imported from a
+user's workout history. No real workout export, HealthKit dump, GPX/FIT/TCX file,
+or rendered map video is included here.
 
 ## Contact and scope
 
