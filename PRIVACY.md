@@ -66,8 +66,9 @@ Example workouts are hard-coded local fixtures with fabricated workout metrics.
 The Berlin route uses public landmarks. The New York example follows a public
 running track using OpenStreetMap coordinates under the licenses in
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Neither is imported from a
-user's workout history. No real workout export, HealthKit dump, GPX/FIT/TCX file,
-or rendered map video is included here.
+user's workout history. No real workout export, HealthKit dump, or GPX/FIT/TCX file is
+included here. The separate launch-film MP4 is promotional project media; its
+presence does not mean that the app records or exports replay videos.
 
 ## Contact and scope
 

@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a reproducible problem using example or sanitized data.
+title: "Bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Please do not upload real HealthKit records, private routes, secrets or identifying device logs. For vulnerabilities, follow SECURITY.md."
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the bug, what you expected, and its impact.
+      placeholder: "When I open an example run and tap Replay..."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include exact steps using the example workouts where possible.
+      placeholder: "1. Run the app in Debug\n2. Select an example workout\n3. ..."
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: iOS version, device/simulator, Xcode version, and commit if known.
+      placeholder: "iOS 17 / iPhone 15 simulator / Xcode 26.6"
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Sanitized evidence
+      description: Optional screenshots or logs with all personal information removed.
