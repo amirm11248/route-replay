@@ -1,7 +1,7 @@
 <h1 align="center">Route Replay</h1>
 <p align="center"><strong>Your workout was the journey. This is the replay.</strong></p>
 <p align="center">
-  An open-source iPhone app that turns GPS workouts from Apple Health into interactive 3D route replays.
+  Open-source SwiftUI iPhone app that replays Apple Health and Apple Watch GPS workouts in 3D with MapKit.
 </p>
 
 https://github.com/user-attachments/assets/184c8131-cf0c-43ea-848d-78cd12fde2dd
@@ -16,9 +16,9 @@ https://github.com/user-attachments/assets/184c8131-cf0c-43ea-848d-78cd12fde2dd
 
 ---
 
-### From activity data to a new point of view
+### 3D GPS workout replay for Apple Health
 
-Route Replay reads supported outdoor workouts and their GPS routes from Apple Health, puts the route back on a map, and moves a 3D camera along the path. Instead of another static workout summary, you can revisit the route you actually took.
+Route Replay is an open-source iOS app for visualizing recorded running, cycling and hiking workouts. It reads supported GPS routes through HealthKit, displays them on Apple Maps and animates a 3D camera along each path using MapKit. Explore workout history and revisit recorded routes alongside pace, elevation and heart-rate data, without uploading workouts to a Route Replay backend.
 
 **Made for runners, cyclists, hikers, and anyone who records outdoor workouts with an Apple Watch.**
 
