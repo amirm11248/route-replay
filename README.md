@@ -106,6 +106,6 @@ Read the [technical privacy notice](PRIVACY.md) before distribution. It is expli
 
 ### Project status & contributing
 
-Route Replay is a **personal open-source hobby project**, currently developed without monetization. Issues and focused pull requests are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), and [PROJECT_STATUS.md](PROJECT_STATUS.md). GitHub Releases also hosts an **unsigned IPA** that requires user-side signing before installation.
+Route Replay is a **personal open-source hobby project**, currently developed without monetization. Issues and focused pull requests are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md). GitHub Releases also hosts an **unsigned IPA** that requires user-side signing before installation.
 
 **License:** Original code, documentation and original assets are [MIT licensed](LICENSE). Third-party material has separate terms; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Apple Maps content and Apple trademarks are not relicensed. Route Replay is not affiliated with or endorsed by Apple.

@@ -3,7 +3,6 @@ Briefly describe the user problem and the implementation.
 
 ## How was it checked?
 - [ ] Xcode build or iOS tests (state destination and result below)
-- [ ] Web build (`cd web-motion && npm ci && npm run build`) if relevant
 - [ ] New logic has appropriate tests or a reason why not
 
 **Validation details:**

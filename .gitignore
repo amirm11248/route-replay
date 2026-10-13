@@ -16,10 +16,14 @@ build/
 *.log
 rotate_log.txt
 
-# Web motion starter build output
-web-motion/node_modules/
-web-motion/dist/
-web-motion/.vite/
+# Local design experiments, trailer sources, and website workspace
+/pieces/
+/styles/
+/web-motion/
+
+# Private development notes
+/GITHUB_PREPUBLICATION_CHECKLIST.md
+/PROJECT_STATUS.md
 
 # Local configuration and credentials
 .env

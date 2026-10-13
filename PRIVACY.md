@@ -5,7 +5,7 @@
 
 **Maintainer:** [Malik Abdullah Amir](https://github.com/amirm11248). The
 repository's current personal hobby purpose is described in
-[PROJECT_STATUS.md](PROJECT_STATUS.md). This purpose does not replace the
+[README.md](README.md). This purpose does not replace the
 disclosures needed for a distributed app.
 
 This notice describes the behavior of the source in this repository. If Route
