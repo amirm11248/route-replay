@@ -1,51 +1,67 @@
 # Install Route Replay on iPhone
 
-**iOS 17+ · iPhone · Version 1.0.0**
+**Version 1.0.0 · iPhone · iOS 17+**
 
-Route Replay is not on the App Store. Its [release download](https://github.com/amirm11248/route-replay/releases/latest) is an **unsigned IPA**, not a tap-to-install app. iOS needs a valid code signature and provisioning profile before it can install the app.
+Download the **[Route Replay unsigned IPA](https://github.com/amirm11248/route-replay/releases/download/v1.0.0/RouteReplay-1.0.0-unsigned.ipa)**. Because this file is unsigned, it cannot be opened directly from the iPhone's Files app to install it.
 
-> **Recommended for most people with a Mac:** use Xcode below. It handles signing automatically. You do **not** need to download or manually sign the IPA if you build from source.
+You can try installing the IPA with **Sideloadly** or **AltStore Classic**. Both support Windows and macOS and sign the IPA using an Apple Account. **Important:** Route Replay needs the **HealthKit** entitlement to read Apple Health workouts. These sideloading methods have **not yet been verified with Route Replay v1.0.0 on a physical iPhone**. An app that installs but cannot request Apple Health permission may have been signed without HealthKit.
 
-## Option 1 — Install with Xcode (recommended)
+## Method 1 — Sideloadly (IPA)
 
-**You need:** a Mac, [Xcode](https://developer.apple.com/xcode/), an Apple Account, [XcodeGen](https://github.com/yonaskolb/XcodeGen), and an iPhone running iOS 17 or later.
+**You need:** an iPhone running iOS 17+, a Mac or Windows computer, an Apple Account, and a USB cable for the first installation.
 
-1. In Xcode, add your Apple Account under **Xcode → Settings → Accounts**.
-2. Open Terminal and run:
+1. Download [Sideloadly](https://sideloadly.io/) for your computer and install it.
+2. Download the [Route Replay IPA](https://github.com/amirm11248/route-replay/releases/download/v1.0.0/RouteReplay-1.0.0-unsigned.ipa).
+3. Connect your unlocked iPhone to the computer with a cable. Tap **Trust** if your iPhone prompts you. On Windows, follow Sideloadly's instructions to install the required Apple device software (its site recommends the non-Microsoft-Store iTunes and iCloud installers).
+4. Open **Sideloadly**. Drag the downloaded `.ipa` file into the app and select your iPhone as the target device.
+5. Enter your **own Apple Account** in Sideloadly, then click **Start**. Follow the Apple sign-in and two-factor authentication prompts when asked.
+6. Once installed, on your iPhone enable **Settings → Privacy & Security → Developer Mode** if required (it may restart). If iOS asks you to trust the developer, check **Settings → General → VPN & Device Management** and follow the trust prompt.
+7. Open **Route Replay** and tap **Allow & Sync Workouts**. If the Apple Health permission screen appears, grant the read access you want to provide.
+
+With a free Apple Account, sideloaded apps normally expire after **7 days**. Sideloadly offers automatic refreshing, but your computer must be available for refreshes. See [Sideloadly's official guide and FAQ](https://sideloadly.io/).
+
+**HealthKit caution:** Installing successfully does **not** guarantee Apple Health access. If the Health authorization prompt does not appear, the signing profile or resulting signature may not authorize the `com.apple.developer.healthkit` entitlement. A different one-click installer cannot fix a missing Apple-approved entitlement.
+
+## Method 2 — AltStore Classic (IPA alternative)
+
+**Use AltStore Classic, not AltStore PAL.** AltStore PAL is a separate marketplace and **does not install arbitrary `.ipa` files**. [AltStore's comparison](https://github.com/altstoreio/FAQ/blob/main/altstore-pal/what-is-altstore-pal.md)
+
+1. Install **AltServer** from [AltStore's official website](https://altstore.io/) on your Mac or Windows PC. Follow its official [macOS](https://faq.altstore.io/altstore-classic/how-to-install-altstore-macos) or [Windows](https://faq.altstore.io/altstore-classic/how-to-install-altstore-windows) setup guide to install **AltStore Classic** on the iPhone.
+2. Download the [Route Replay IPA](https://github.com/amirm11248/route-replay/releases/download/v1.0.0/RouteReplay-1.0.0-unsigned.ipa) and save it to **Files** on your iPhone (transfer it there if you downloaded it on your computer).
+3. Keep AltServer running and your iPhone connected over USB or on the same Wi-Fi network as the computer.
+4. Open **AltStore Classic → My Apps**, tap **+**, and select the downloaded Route Replay `.ipa` from Files. Follow the sign-in or confirmation prompts to install.
+5. Enable **Developer Mode** and trust your signing identity if iOS requires it. Then launch Route Replay and check whether Apple Health permissions work.
+
+AltStore Classic apps signed using a free Apple Account generally need refreshing every **7 days**, and Apple's free-account limits apply. AltServer needs to be running and reachable when refreshing. See [AltStore's setup and refresh instructions](https://faq.altstore.io/altstore-classic/altserver).
+
+**HealthKit caution:** As with Sideloadly, AltStore Classic may install the IPA without preserving/authorizing the entitlement Route Replay needs. Apple Health access through this method has **not** been verified for this release.
+
+## Method 3 — Build and install with Xcode (recommended if HealthKit signing fails)
+
+If you have a Mac, installing directly from the source code gives Xcode control of signing and capabilities, and avoids manually re-signing an IPA.
+
+1. Install [Xcode](https://developer.apple.com/xcode/) and [XcodeGen](https://github.com/yonaskolb/XcodeGen). Add your Apple Account in **Xcode → Settings → Accounts**.
+2. Open Terminal:
 
    ```bash
    git clone https://github.com/amirm11248/route-replay.git
    cd route-replay
-   brew install xcodegen
+   brew install xcodegen # skip if installed
    xcodegen generate
    open RouteReplay.xcodeproj
    ```
 
-   If XcodeGen is already installed, skip the `brew install` command.
-3. In Xcode, select the **RouteReplay** project, then the **RouteReplay** app target → **Signing & Capabilities**. Enable **Automatically manage signing**, choose your **Team**, and give the app a **unique bundle identifier** (for example, `com.yourname.RouteReplay`). Make sure **HealthKit** remains enabled.
-4. Connect and unlock your iPhone, trust your Mac if asked, choose your iPhone as the run destination, then press **Run (⌘R)**. Follow any instructions to enable Developer Mode.
-5. In Route Replay, tap **Allow & Sync Workouts** and grant the requested **read** access in Apple Health.
+3. In Xcode select the **RouteReplay** app target → **Signing & Capabilities**. Turn on **Automatically manage signing**, select your team, and set a **unique Bundle Identifier**.
+4. Keep the **HealthKit** capability enabled. Your signing team and provisioning profile must authorize that capability; Xcode will report a signing error if they do not.
+5. Connect and unlock your iPhone, select it as the run destination, and press **Run (⌘R)**. Complete any Developer Mode prompts, then grant read access in Apple Health.
 
-Xcode creates the development signing assets and installs the app for you. A free Personal Team can have limitations, including seven-day provisioning expiration; if Xcode says a capability or profile is unavailable for your team, its signing error is authoritative. [Apple: run an app on your device](https://developer.apple.com/documentation/xcode/running-your-app-on-simulated-or-physical-devices) · [Apple: personal-team limits](https://developer.apple.com/help/account/basics/about-your-developer-account/)
-
-## Option 2 — Sign the downloaded IPA (advanced)
-
-Choose this only if you **already have** an iOS signing certificate and a device provisioning profile that explicitly authorize **HealthKit**. Merely downloading the IPA, or adding an entitlements file by itself, is not enough.
-
-1. Download [RouteReplay-1.0.0-unsigned.ipa](https://github.com/amirm11248/route-replay/releases/download/v1.0.0/RouteReplay-1.0.0-unsigned.ipa).
-2. Have an **explicit App ID**, a signing certificate with its private key, and a matching **development/ad hoc provisioning profile** for the device you want to install on. HealthKit must be enabled for that App ID **and authorized by the profile**. If you don't already have these, use Option 1 instead. [Apple: HealthKit setup](https://developer.apple.com/documentation/xcode/configuring-healthkit-access)
-3. On a Mac, open [iOS App Signer](https://github.com/DanTheMan827/ios-app-signer). Select the unsigned IPA, the signing certificate, and the correct provisioning profile. Set the app identifier to the explicit identifier authorized by your profile if it differs from the packaged app's ID.
-4. Export the **signed IPA**. Check that its signature and embedded profile still include the **HealthKit** entitlement (`com.apple.developer.healthkit`). If they do not, don't expect workout import to work. [Apple: how provisioning entitlements work](https://developer.apple.com/documentation/technotes/tn3125-inside-code-signing-provisioning-profiles)
-5. Connect the iPhone to your Mac. In Xcode, open **Window → Devices and Simulators → Devices**, select your iPhone, click **+** under Installed Apps, and choose the **signed** IPA. Enable Developer Mode if needed, then launch and grant Apple Health read access. [Apple: install IPA files](https://help.apple.com/xcode/mac/current/en.lproj/devade83d1d7.html)
-
-**Important:** Third-party one-click sideloaders can replace or omit required entitlements. We have **not verified** the v1.0.0 unsigned release using a third-party signing service on a physical device. Never upload your Apple signing certificates or Apple Account credentials to an untrusted service.
+[Apple's HealthKit configuration instructions](https://developer.apple.com/documentation/xcode/configuring-healthkit-access) · [Apple's provisioning/entitlement explanation](https://developer.apple.com/documentation/technotes/tn3125-inside-code-signing-provisioning-profiles)
 
 ## Troubleshooting
 
-- **“Untrusted Developer”, Developer Mode, or installation failure:** Confirm Developer Mode when required, verify that the provisioning profile includes this specific iPhone, and check the certificate/profile expiration.
-- **No workouts or Health permission:** The signing profile may not authorize HealthKit. Verify both the signed app's entitlement and Apple Health permissions. A successful installation alone is not proof that HealthKit is working.
-- **No matching provisioning profile:** Use Option 1. iOS App Signer does not automatically create the required HealthKit-enabled profile for you.
-- **Apple Account / free signing:** Free development profiles expire and may require periodic reinstallation; some signing capabilities depend on team membership.
-- **3D imagery unavailable:** 3D/satellite coverage varies by location in Apple Maps.
+- **Installation fails / app won't open:** Make sure the iPhone is unlocked and trusted, Developer Mode is enabled if requested, and the Apple signing profile is valid and not expired.
+- **No Apple Health permission / no workouts:** Check that the **signed app** includes `com.apple.developer.healthkit` and the provisioning profile explicitly authorizes it. If unsure, build with Xcode and inspect the signing errors. Merely putting an entitlements file beside an IPA does not enable HealthKit.
+- **Free Apple Account:** Sideloaded apps usually expire after seven days and must be refreshed. Some Apple capabilities may not be available to every signing team.
+- **No 3D imagery:** Apple Maps coverage varies by location.
 
-The app reads workout data on your device. See [Privacy](../PRIVACY.md). This installation guide does not request Apple Account credentials, signing keys, or Health data from you.
+Route Replay processes imported workouts locally. See the project's [privacy notice](../PRIVACY.md). Only download tools from their official websites, and never send your Apple Account password, certificates, or personal Health data to the project maintainer.
