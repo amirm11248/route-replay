@@ -1,19 +1,20 @@
 # Security policy
 
-Route Replay is a local iOS sample project with no Route Replay server,
-accounts, or production API credentials in this repository.
+Route Replay is an open-source, personal iOS project with no app-owned server,
+accounts or production API credentials in this repository.
 
-Please do not open a public issue containing HealthKit data, GPS coordinates,
-passwords, tokens, certificates, private keys, or debug files from a real
-workout.
+## Reporting
 
-The repository is currently private. Collaborators can open a repository issue
-visible to its authorized members with the affected file and a sanitized
-description. Use example workouts for reproduction and keep sensitive data out
-of the report.
+**Please do not post vulnerabilities, personal routes, HealthKit data, credentials
+or identifying device logs in public issues.**
 
-Before making the repository public, enable GitHub's private vulnerability
-reporting and use that feature for security reports. Rotate any exposed
-credential before discussing the exposure. The maintainer is
-[Malik Abdullah Amir](https://github.com/amirm11248); support is provided as time
-allows for this personal project.
+If the repository's **Security → Report a vulnerability** option is enabled,
+use that private GitHub reporting flow. Otherwise contact the maintainer through
+[their GitHub profile](https://github.com/amirm11248) to arrange a private
+disclosure channel. Do not attach sensitive files to a public issue.
+
+A helpful report includes the affected revision, reproduction steps with
+fabricated/example data, impact and any suggested mitigation. There is no
+guaranteed response SLA for this hobby project.
+
+For non-sensitive bugs and feature suggestions, use ordinary repository issues.

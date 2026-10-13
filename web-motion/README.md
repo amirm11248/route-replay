@@ -1,43 +1,38 @@
-# Route Replay web motion starter
+# Route Replay website
 
-This is a separate React + Vite playground for web prototypes. It keeps browser-only motion dependencies out of the SwiftUI app.
+This optional React / Vite workspace presents the Route Replay open-source
+iPhone project and its [launch trailer](../pieces/route-replay-launch-v6/renders/final.mp4).
 
-Original project code uses the root [MIT License](../LICENSE). The copied
-React Bits component and installed dependencies retain their own licenses;
-see [third-party notices](../THIRD_PARTY_NOTICES.md). The maintainer's current
-purpose is personal and noncommercial; see [project status](../PROJECT_STATUS.md).
+The iOS application itself is in [RouteReplay/](../RouteReplay/).
 
-## Start it
+## Develop locally
 
-```sh
-npm install
+~~~sh
+cd web-motion
+npm ci
 npm run dev
-```
+~~~
 
-The sample page uses all three tools:
+To check the production build:
 
-- **GSAP** sequences the entry reveals and the route line's scroll animation.
-- **Lenis** smooths scrolling and feeds the same animation frame to GSAP ScrollTrigger.
-- **React Bits** supplies the installed `SplitText` example in `src/components/SplitText.tsx`.
+~~~sh
+npm run build
+npm run preview
+~~~
 
-The integration lives in `src/components/SmoothScroll.tsx`; page animations are in `src/App.tsx`. The page honours the system reduced-motion setting.
+The site uses GSAP, Lenis and React; it respects reduced-motion preferences.
+It links to the real repository rather than the GitHub profile. The trailer
+player streams the MP4 from the public GitHub repository; the local fallback
+is the GitHub-hosted trailer page. Network access is required to load the video.
 
-## Add a React Bits component
+**Deployment:** updating this folder does not automatically update a separately
+hosted website. Build and deploy the current commit in your hosting environment.
 
-From this directory, choose a component on [React Bits](https://reactbits.dev/components) and run its displayed command. For example:
+The site has no sign-in or account creation. The native app is not an App Store
+download. Refer to [PRIVACY.md](../PRIVACY.md) for the iOS app's technical
+privacy notice, and review German website operator-disclosure obligations
+before publishing or changing the hosting arrangement.
 
-```sh
-npx shadcn@latest add @react-bits/BlurText-TS-TW
-```
-
-React Bits installs source files into this project, so each component can be edited directly. The suffix selects JavaScript or TypeScript and CSS or Tailwind. `components.json` and the Vite `@/` alias are configured for the CLI.
-
-## Useful commands
-
-```sh
-npm run dev       # start the local playground
-npm run build     # type-check and build for production
-npm run preview   # serve the production build locally
-```
-
-Library references: [GSAP](https://github.com/greensock/GSAP), [Lenis](https://github.com/darkroomengineering/lenis), and [React Bits](https://github.com/DavidHDev/react-bits). See the repository's [third-party notices](../THIRD_PARTY_NOTICES.md) for license links.
+Original site code follows the root [MIT License](../LICENSE). Third-party
+libraries and assets follow their own terms described in
+[THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).

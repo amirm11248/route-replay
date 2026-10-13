@@ -1,182 +1,114 @@
-# Route Replay
+<p align="center">
+  <a href="https://github.com/amirm11248/route-replay/blob/main/pieces/route-replay-launch-v6/renders/final.mp4">
+    <img src="docs/assets/trailer-cover.svg" width="100%" alt="Route Replay launch film artwork — follow a glowing route over a stylized map. Click to watch the MP4 trailer." />
+  </a>
+</p>
 
-Personal hobby project by [Malik Abdullah Amir](https://github.com/amirm11248),
-currently developed for learning and personal use without monetization.
-Original code and documentation are licensed under [MIT](LICENSE).
-See [project status](PROJECT_STATUS.md) for the current purpose and what to
-review if that purpose changes.
+<h1 align="center">Route Replay</h1>
+<p align="center"><strong>Your workout was the journey. This is the replay.</strong></p>
+<p align="center">
+  An open-source iPhone app that turns GPS workouts from Apple Health into interactive 3D route replays.
+</p>
+<p align="center">
+  <a href="https://github.com/amirm11248/route-replay/blob/main/pieces/route-replay-launch-v6/renders/final.mp4"><strong>▶ Watch the trailer</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://route-replay.roger72141.chatgpt.site">Project website</a>
+  &nbsp;·&nbsp;
+  <a href="#run-it-yourself">Build the app</a>
+  &nbsp;·&nbsp;
+  <a href="PRIVACY.md">Privacy</a>
+</p>
 
-Relive every outdoor workout from your Apple Watch — on the map, in 3D.
+---
 
-Import your running, cycling, walking, hiking and other outdoor workouts from Apple Health. Browse them grouped by month, see every stat on a beautiful detail card (distance, pace, heart rate, elevation, weather, steps), then hit play to fly through your route in **3D satellite view**.
+### From activity data to a new point of view
 
-## Features
+Route Replay reads supported outdoor workouts and their GPS routes from Apple Health, puts the route back on a map, and moves a 3D camera along the path. Instead of another static workout summary, you can revisit the route you actually took.
 
-- **HealthKit Sync** — Connects to Apple Health with read-only access and imports only Apple Watch workouts that contain real GPS route data. Route Replay has no app-owned backend; see the [privacy notice](PRIVACY.md) for MapKit details.
-- **Workout Library** — Grouped by month with search, summary stats, and activity-type-specific icons.
-- **Detail Screen** — Interactive MapKit map with a blue route polyline and visible Apple-provided map attribution. A neutral draggable sheet presents distance, duration, pace, heart rate, elevation and weather; More Detail expands energy, steps and the heart-rate chart. Replay Route stays within easy reach.
-- **Appearance** — Platinum light mode and Onyx dark mode, with neutral backgrounds and a restrained cool silver accent in dark mode. Settings offers System, Light and Dark appearance preferences.
-- **3D Satellite Flyover** — Press play and the camera follows your route in real-time, rendered with MapKit satellite/flyover imagery and realistic 3D terrain. The workout summary sheet is hidden during replay. A compact matte translucent timeline sits below circular controls that fan upward. The fan appears for three seconds when replay starts, then folds into a button at the right edge above the timeline; tapping it opens the controls again. Controls: pause/resume, speed (0.5×–10×), zoom and 3D depth (1–10). Replays stay in the app; video export is not available.
-- **Example Mode** — Tap "Test App with Example Workouts" to open five local sample workouts (two runs, walk, cycle, hike) without HealthKit access. The mode survives relaunches, and Settings always provides a separate Apple Health sync action.
+**Made for runners, cyclists, hikers, and anyone who records outdoor workouts with an Apple Watch.**
 
-The newest example, **New York Run**, is a 2.54 km counterclockwise lap of the
-Stephanie and Fred Shuman Reservoir Running Track in Central Park (16 minutes
-of simulated workout time). Its 177 mapped vertices follow the gravel running
-track, with replay fixes at most 10 meters apart. It contains no road segments
-or street crossings. Distance is calculated from the route; workout metrics
-are illustrative. The Berlin run remains available.
+| Explore | Replay | Understand |
+| :--- | :--- | :--- |
+| Browse workouts by month, activity and search. | Follow your route through Apple Maps satellite/3D imagery. | See distance, duration, pace, heart rate, elevation, energy and available weather data. |
+| Read-only Apple Health integration. | Pause, resume, change speed (0.5×–10×), zoom and 3D depth. | Route, workout stats and heart-rate chart in one place. |
 
-New York has Apple Maps Detailed City Experience and Flyover coverage according
-to [Apple's feature availability](https://www.apple.com/ios/feature-availability/).
-The track and direction are described in the [Conservancy's running guide](https://www.centralparknyc.org/activities/guides/running).
-The coordinate data is © OpenStreetMap contributors, under ODbL 1.0; see
-[third-party notices](THIRD_PARTY_NOTICES.md). No Apple map imagery is bundled.
+### Watch the launch film
 
-## Requirements
+**[Play the Route Replay trailer ↗](https://github.com/amirm11248/route-replay/blob/main/pieces/route-replay-launch-v6/renders/final.mp4)** — MP4, approximately 8.8 MB.
 
-- **Xcode 16+** (project built with Xcode 26.6)
-- **A physical iPhone or iPad** with HealthKit workout data (the simulator works for demo mode but has no real Health data)
-- An **Apple ID** (free) for code signing if running on a real device
-- [XcodeGen](https://github.com/yonaskolb/XcodeGen) — install with `brew install xcodegen`
+The film is a project showcase; it is not an in-app export. Route Replay **does not currently support exporting replay videos**. Live satellite imagery and 3D detail depend on Apple Maps coverage and the device/network environment.
 
-## Setup & Build
+### Run it yourself
 
-```bash
-# 1. Generate the Xcode project
+This is a source-code project, **not an App Store download**. You'll need a Mac with Xcode, and an iPhone for real HealthKit data. An iOS Simulator can run the included example-workout flow.
+
+**Requirements:** iOS 17+, Xcode 16+ (currently maintained with Xcode 26.6), [XcodeGen](https://github.com/yonaskolb/XcodeGen), and an Apple ID for on-device signing. The app target is **iPhone**, not iPad.
+
+~~~bash
+git clone https://github.com/amirm11248/route-replay.git
+cd route-replay
+brew install xcodegen   # if not already installed
 xcodegen generate
-
-# 2. Open the project
 open RouteReplay.xcodeproj
+~~~
 
-# 3. In Xcode:
-#    - Select your team in Signing & Capabilities (free Apple ID works)
-#    - Change the bundle ID to something unique (e.g., com.yourname.RouteReplay)
-#    - Choose a simulator or your connected iPhone as the run destination
-#    - Press Run (⌘R)
-```
+In Xcode:
 
-## Web motion starter
+1. Select the **RouteReplay** scheme.
+2. For a physical iPhone, choose your signing team and set a unique bundle identifier in **Signing & Capabilities**.
+3. Select an iPhone simulator or your connected iPhone, then press **Run** (⌘R).
+4. For a simulator demo, use **Test App with Example Workouts** on the first screen. That onboarding shortcut is available in **DEBUG builds only**.
+5. Open a workout, inspect the route and stats, then start a 3D replay. To use real workouts, grant **read-only** Apple Health access on a supported device.
 
-The optional [`web-motion/`](web-motion/README.md) workspace is a React playground for web prototypes. It has GSAP, Lenis and a React Bits component ready to use, with Lenis connected to GSAP ScrollTrigger.
+The examples include a New York Central Park Reservoir route and a Berlin run. Example metrics are illustrative, not exports of anyone's Health data.
 
-```bash
-cd web-motion
-npm install
-npm run dev
-```
+### How it works
 
-## Running Tests
+~~~text
+Apple Health / bundled examples
+             ↓
+     Workout + GPS route
+             ↓
+      Route resampling
+             ↓
+ Camera heading + interpolation
+             ↓
+     MapKit 3D flyover
+~~~
 
-```bash
-# Unit tests (route geometry)
-xcodebuild test -scheme RouteReplay -destination 'platform=iOS Simulator,name=iPhone 17'
+- **UI:** SwiftUI, UIKit, Swift Charts
+- **Workout import:** HealthKit workout and route queries; example data stays local
+- **Map and camera:** MapKit with distance-based interpolation, route resampling, and adjustable camera playback
+- **Persistence:** UserDefaults for selected source/appearance preferences; no app-owned account system, analytics SDK, or backend
+- **Map content:** loaded by Apple's MapKit services; Apple Maps availability and terms apply
 
-# UI tests (permission screen + local example workflow)
-xcodebuild test -scheme RouteReplay -destination 'platform=iOS Simulator,name=iPhone 17' -resultBundlePath /tmp/result.xcresult
-```
+The native application is in [RouteReplay/](RouteReplay/), the XcodeGen project spec is [project.yml](project.yml), and tests live in [RouteReplayTests/](RouteReplayTests/) and [RouteReplayUITests/](RouteReplayUITests/). The separate [web-motion/](web-motion/) workspace contains an optional React/Vite project website.
 
-> **Note on UI tests:** The deterministic example-workout flow does not request
-> HealthKit write access, so it does not depend on the Health app permission
-> sheet. The Apple Health sync path can still be tested separately on a device
-> with Health data.
+### Tests
 
-## Testing on Simulator
+Use an installed iPhone simulator destination; substitute the name to match your Xcode installation.
 
-1. Launch the app — you'll see the permission screen.
-2. Tap **"Test App with Example Workouts"** (DEBUG-only button at the bottom).
-3. The five local workouts appear immediately; no HealthKit permission or simulator Health data is required.
-4. Use Settings → **Sync with Apple Health** when you want to switch to real data.
-5. Tap a workout → detail map + stats → tap play → 3D satellite flyover!
+~~~bash
+xcodebuild test \
+  -project RouteReplay.xcodeproj \
+  -scheme RouteReplay \
+  -destination 'platform=iOS Simulator,name=iPhone 17'
+~~~
 
-## Architecture
+The Swift test target exercises route geometry. UI tests cover the onboarding and example-workout flow without writing to HealthKit. Tests have **not been certified as passing on every Xcode/device combination**.
 
-### App Structure
+### Privacy by design
 
-```
-.
-├── project.yml               # XcodeGen project spec
-├── Scripts/
-│   └── make_icon.swift       # App icon generator
-├── RouteReplay.xcodeproj
-├── RouteReplay/
-│   ├── App/
-│   │   ├── RouteReplayApp.swift    # App entry point
-│   │   └── RootView.swift          # Routes permission ↔ library
-│   ├── Health/
-│   │   ├── HealthKitManager.swift  # Source switching, queries, caching
-│   ├── Models/
-│   │   ├── WorkoutEntry.swift      # Data model + activity-type styling
-│   │   ├── ExampleWorkoutData.swift # Local test workouts and routes
-│   ├── Views/
-│   │   ├── PermissionView.swift    # Onboarding / Health connect
-│   │   ├── WorkoutListView.swift   # Month-grouped library + source settings
-│   │   ├── AppSettingsView.swift   # Example mode + Apple Health sync
-│   │   ├── WorkoutDetailView.swift # Map + route polyline + play
-│   │   ├── WorkoutStatsCard.swift  # Integrated summary + HR chart
-│   │   ├── AppTheme.swift          # Platinum / Onyx semantic colors
-│   │   ├── GooeyAddMenu.swift       # Upward fan + matte replay material
-│   │   ├── ReplayMapView.swift     # MapKit route map + camera coordinator
-│   │   └── WorkoutDetailView+Previews.swift  # Mock data for Xcode Previews
-│   └── Assets.xcassets/           # App icon + accent color
-├── RouteReplayTests/
-│   └── RouteGeometryTests.swift    # Math tests (bearing, interpolation)
-└── RouteReplayUITests/
-    └── WorkoutFlowUITests.swift    # Deterministic demo-flow UI tests
-```
+- Requests **read access only** to relevant workouts, GPS routes, heart rate and related workout data.
+- Processes imported Health data on-device; no Route Replay server or account.
+- Example mode does not request HealthKit access.
+- MapKit may contact Apple's services to display maps and satellite imagery.
+- No built-in replay-video export or Photos access.
 
-### Key Design Decisions
+Read the [technical privacy notice](PRIVACY.md) before distribution. It is explicitly a **repository draft**, not a finalized App Store privacy policy. Never post personal GPS routes or HealthKit records in issues.
 
-| Concern | Approach |
-|---|---|
-| **HealthKit API** | Read-only `HKSampleQuery` + `HKWorkoutRouteQuery` for real workouts and metrics (iOS 16+). Example mode stays entirely in-app. |
-| **Map framework** | MapKit through `MKMapView`/`MKMapCamera`; map tiles and imagery are provided at runtime by Apple. |
-| **3D Satellite** | `MKMapView.mapType = .satelliteFlyover`; maps are rendered live in the app. |
-| **Replay engine** | Distance-based interpolation on a resampled polyline with anticipatory heading and frame-paced MapKit camera updates. |
-| **Heart rate chart** | Swift Charts (`Chart { LineMark + AreaMark }`) with a subtle theme-colored fill. |
-| **Stats card** | Opaque neutral surface, adaptive metric layout and SF Symbols. |
-| **Appearance** | Semantic dynamic colors and a persisted System / Light / Dark preference. |
-| **Weather data** | Read from `HKWorkout.metadata` keys (`HKMetadataKeyWeatherTemperature`, `HKMetadataKeyWeatherHumidity`). |
+### Project status & contributing
 
-### Platform Target
+Route Replay is a **personal open-source hobby project**, currently developed without monetization. Issues and focused pull requests are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), and [PROJECT_STATUS.md](PROJECT_STATUS.md). GitHub hosts source code, not a ready-to-install binary.
 
-- **iOS 17.0+** — MapKit, Swift Charts, and the camera APIs used by this project are available from iOS 17.
-- **Not macOS / iPad-only / visionOS** — HealthKit GPS routes require iOS.
-
-## Screenshots and demo media
-
-The `pieces/` and `styles/` folders contain design studies, generated images,
-preview frames, and synthesized audio. The `web-motion/` workspace contains
-web artwork and prototype assets. No real HealthKit workout exports or bundled
-Apple map tiles or imagery are included. The app does not export or save replay
-videos. Run the UI tests with `-resultBundlePath` to generate local screenshot
-attachments for review.
-
-## Privacy
-
-HealthKit data is processed on-device and Route Replay has no app-owned server, analytics, or advertising SDK. The normal sync path requests read permission only; example mode does not use HealthKit at all. MapKit may load map content from Apple when maps are displayed. See [PRIVACY.md](PRIVACY.md).
-
-## License
-
-Copyright (c) 2026 Malik Abdullah Amir. Original Route Replay code,
-documentation, and original assets are licensed under the standard
-[MIT License](LICENSE), including its warranty disclaimer.
-
-MIT permits commercial reuse. The maintainer's current noncommercial purpose
-does not restrict what other people may do under that license. See
-[PROJECT_STATUS.md](PROJECT_STATUS.md).
-
-Third-party materials retain their own licenses. In particular, the New York
-route coordinates use ODbL, the copied React Bits component uses MIT + Commons
-Clause, and the web workspace's dependencies and fonts have their own terms.
-Apple's SDKs, Apple Maps content, and HealthKit data are also outside this MIT
-grant. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-
-## Acknowledgements
-
-Route Replay uses Apple’s SwiftUI, HealthKit, MapKit, Core Location, UIKit, Swift Charts, and SF Symbols APIs. Apple’s SDKs and map services are used through the platform and are not redistributed in this repository. Apple does not sponsor or endorse Route Replay.
-
-Apple, Apple Watch, HealthKit, SF Symbols, and SwiftUI are trademarks of Apple
-Inc., registered in the U.S. and other countries and regions. Route Replay is
-not affiliated with, sponsored by, or endorsed by Apple Inc.
-
-See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the dependency audit and [SECURITY.md](SECURITY.md) for reporting guidance.
+**License:** Original code, documentation and original assets are [MIT licensed](LICENSE). Third-party material has separate terms; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Apple Maps content and Apple trademarks are not relicensed. Route Replay is not affiliated with or endorsed by Apple.
