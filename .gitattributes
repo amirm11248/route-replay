@@ -1,0 +1,7 @@
+# RouteReplay/ contains the primary Swift/SwiftUI iOS application.
+# Launch-film experiments, visual studies, and the optional promotional web
+# workspace are supporting material rather than the main app language.
+# These overrides affect GitHub's language statistics, not the files themselves.
+pieces/** linguist-documentation
+styles/** linguist-documentation
+web-motion/** -linguist-detectable
