@@ -12,8 +12,6 @@
 <p align="center">
   <a href="https://github.com/amirm11248/route-replay/blob/main/pieces/route-replay-launch-v6/renders/final.mp4"><strong>▶ Watch the trailer</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://route-replay.roger72141.chatgpt.site">Project website</a>
-  &nbsp;·&nbsp;
   <a href="#run-it-yourself">Build the app</a>
   &nbsp;·&nbsp;
   <a href="PRIVACY.md">Privacy</a>
@@ -82,7 +80,7 @@ Apple Health / bundled examples
 - **Persistence:** UserDefaults for selected source/appearance preferences; no app-owned account system, analytics SDK, or backend
 - **Map content:** loaded by Apple's MapKit services; Apple Maps availability and terms apply
 
-The native application is in [RouteReplay/](RouteReplay/), the XcodeGen project spec is [project.yml](project.yml), and tests live in [RouteReplayTests/](RouteReplayTests/) and [RouteReplayUITests/](RouteReplayUITests/). The separate [web-motion/](web-motion/) workspace contains an optional React/Vite project website.
+The native application is in [RouteReplay/](RouteReplay/), the XcodeGen project spec is [project.yml](project.yml), and tests live in [RouteReplayTests/](RouteReplayTests/) and [RouteReplayUITests/](RouteReplayUITests/).
 
 ### Tests
 
