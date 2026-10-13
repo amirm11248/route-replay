@@ -1,16 +1,3 @@
-
-
-
-https://github.com/user-attachments/assets/184c8131-cf0c-43ea-848d-78cd12fde2dd
-
-
-
-
-
-
-
-
-
 <h1 align="center">Route Replay</h1>
 <p align="center"><strong>Your workout was the journey. This is the replay.</strong></p>
 <p align="center">
@@ -18,6 +5,9 @@ https://github.com/user-attachments/assets/184c8131-cf0c-43ea-848d-78cd12fde2dd
 </p>
 
 https://github.com/user-attachments/assets/184c8131-cf0c-43ea-848d-78cd12fde2dd
+
+<sub>Project showcase · Replay video export is not currently available in the app. 3D imagery depends on Apple Maps coverage.</sub>
+
 <p align="center">
   <a href="#run-it-yourself">Build the app</a>
   &nbsp;·&nbsp;
@@ -36,8 +26,6 @@ Route Replay reads supported outdoor workouts and their GPS routes from Apple He
 | :--- | :--- | :--- |
 | Browse workouts by month, activity and search. | Follow your route through Apple Maps satellite/3D imagery. | See distance, duration, pace, heart rate, elevation, energy and available weather data. |
 | Read-only Apple Health integration. | Pause, resume, change speed (0.5×–10×), zoom and 3D depth. | Route, workout stats and heart-rate chart in one place. |
-
-The film is a project showcase; it is not an in-app export. Route Replay **does not currently support exporting replay videos**. Live satellite imagery and 3D detail depend on Apple Maps coverage and the device/network environment.
 
 ### Run it yourself
 
