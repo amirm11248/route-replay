@@ -27,6 +27,10 @@ Route Replay reads supported outdoor workouts and their GPS routes from Apple He
 | Browse workouts by month, activity and search. | Follow your route through Apple Maps satellite/3D imagery. | See distance, duration, pace, heart rate, elevation, energy and available weather data. |
 | Read-only Apple Health integration. | Pause, resume, change speed (0.5×–10×), zoom and 3D depth. | Route, workout stats and heart-rate chart in one place. |
 
+<img width="2072" height="1303" alt="screenshots for github" src="https://github.com/user-attachments/assets/3e1dc9f9-f58f-40ad-8ed2-c8dd8ffdf8bc" />
+
+
+
 ### Run it yourself
 
 This is a source-code project, **not an App Store download**. You'll need a Mac with Xcode, and an iPhone for real HealthKit data. An iOS Simulator can run the included example-workout flow.
