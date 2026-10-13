@@ -9,7 +9,11 @@ https://github.com/user-attachments/assets/184c8131-cf0c-43ea-848d-78cd12fde2dd
 <sub>Project showcase · Replay video export is not currently available in the app. 3D imagery depends on Apple Maps coverage.</sub>
 
 <p align="center">
-  <a href="#run-it-yourself">Build the app</a>
+  <a href="https://github.com/amirm11248/route-replay/releases/latest">Download unsigned IPA</a>
+  &nbsp;·&nbsp;
+  <a href="docs/INSTALL.md">Install on iPhone</a>
+  &nbsp;·&nbsp;
+  <a href="#run-it-yourself">Build from source</a>
   &nbsp;·&nbsp;
   <a href="PRIVACY.md">Privacy</a>
 </p>
@@ -33,7 +37,7 @@ Route Replay is an open-source iOS app for visualizing recorded running, cycling
 
 ### Run it yourself
 
-This is a source-code project, **not an App Store download**. You'll need a Mac with Xcode, and an iPhone for real HealthKit data. An iOS Simulator can run the included example-workout flow.
+**Want to install Route Replay?** Get the [v1.0.0 unsigned IPA](https://github.com/amirm11248/route-replay/releases/latest) and follow the [iPhone installation and signing guide](docs/INSTALL.md). The IPA **must be signed** with an iOS profile that authorizes HealthKit; it is **not** a one-tap download. For most Mac users, building directly from Xcode below is simpler than re-signing the IPA. A simulator can run the example-workout flow.
 
 **Requirements:** iOS 17+, Xcode 16+ (currently maintained with Xcode 26.6), [XcodeGen](https://github.com/yonaskolb/XcodeGen), and an Apple ID for on-device signing. The app target is **iPhone**, not iPad.
 
@@ -102,6 +106,6 @@ Read the [technical privacy notice](PRIVACY.md) before distribution. It is expli
 
 ### Project status & contributing
 
-Route Replay is a **personal open-source hobby project**, currently developed without monetization. Issues and focused pull requests are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), and [PROJECT_STATUS.md](PROJECT_STATUS.md). GitHub hosts source code, not a ready-to-install binary.
+Route Replay is a **personal open-source hobby project**, currently developed without monetization. Issues and focused pull requests are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), and [PROJECT_STATUS.md](PROJECT_STATUS.md). GitHub Releases also hosts an **unsigned IPA** that requires user-side signing before installation.
 
 **License:** Original code, documentation and original assets are [MIT licensed](LICENSE). Third-party material has separate terms; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Apple Maps content and Apple trademarks are not relicensed. Route Replay is not affiliated with or endorsed by Apple.
