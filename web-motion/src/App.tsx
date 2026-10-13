@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowDownRight, ArrowRight, ArrowUpRight, Github, HeartPulse, MapPin, Play, ShieldCheck } from 'lucide-react'
+import { ArrowDownRight, ArrowRight, ArrowUpRight, Code, HeartPulse, MapPin, Play, ShieldCheck } from 'lucide-react'
 import ReplayPlayer from './components/ReplayPlayer'
 import SiteModal from './components/SiteModal'
 import SmoothScroll from './components/SmoothScroll'
@@ -34,7 +34,7 @@ export default function App() {
         <nav className="topnav" aria-label="Main navigation">
           <a href="#story">The idea</a><a href="#trailer">Watch the film</a><a href="#features">Features</a>
         </nav>
-        <a className="topbar-link" href={siteConfig.githubUrl} target="_blank" rel="noopener noreferrer"><Github size={16}/> Source <ArrowUpRight size={14}/></a>
+        <a className="topbar-link" href={siteConfig.githubUrl} target="_blank" rel="noopener noreferrer"><Code size={16}/> Source <ArrowUpRight size={14}/></a>
       </header>
 
       <main>
@@ -118,7 +118,7 @@ export default function App() {
 
         <section className="source-cta">
           <div><p className="eyebrow">BUILT IN THE OPEN</p><h2>Explore what makes<br/>it move.</h2><p>Native SwiftUI. HealthKit. MapKit. All source available on GitHub. No App Store download or installable binary yet.</p></div>
-          <a className="button button-lime" href={siteConfig.githubUrl} target="_blank" rel="noopener noreferrer"><Github size={17}/> View on GitHub <ArrowUpRight size={17}/></a>
+          <a className="button button-lime" href={siteConfig.githubUrl} target="_blank" rel="noopener noreferrer"><Code size={17}/> View on GitHub <ArrowUpRight size={17}/></a>
         </section>
       </main>
       <footer className="footer">
